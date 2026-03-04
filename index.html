@@ -1327,7 +1327,7 @@
     const codeStep = document.getElementById('codeStep');
     const messageStep = document.getElementById('messageStep');
     const photoRevealImg = document.getElementById('photoRevealImg');
-    const SECRET_CODES = ['10.1', '0704', 'шинэ_кod'];
+    const SECRET_CODES = ['10.1', '0704'];
 
     secretBtn.addEventListener('click', () => {
       codeStep.style.display = 'block';
@@ -1341,7 +1341,7 @@
 
     function tryUnlock() {
       const val = codeInput.value.trim();
-      if (val === SECRET_CODE) {
+      if (SECRET_CODES.includes(val)) {
         codeStep.style.display = 'none';
         messageStep.style.display = 'block';
 
