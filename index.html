@@ -1093,7 +1093,7 @@
         </p>
         <p class="modal-signature" id="modalSig">— Чамд зориулсан захидал</p>
 
-        <!-- PHOTO SECTION — зургийн нэрийг энд тохируулна уу -->
+        <!-- PHOTO SECTION -->
         <div class="photo-reveal-wrap" id="photoWrap">
           <img class="photo-reveal-img" id="photoRevealImg" src="enguun.jpg" alt="Зураг">
         </div>
@@ -1200,9 +1200,9 @@
       const raw = nameInput.value.trim();
       userName = raw || 'Найз минь';
       overlay.classList.add('hidden');
-      greetingEl.textContent = Тавтай морилно уу, ${userName} 🌸;
-      modalSig.textContent = — ${userName}-д зориулсан захидал;
-      document.getElementById('footerText').textContent = ${userName}, цаашдаа ч гоё яриа, сайхан мөчүүд байх болтугай ✦;
+      greetingEl.textContent = `Тавтай морилно уу, ${userName} 🌸`;
+      modalSig.textContent = `— ${userName}-д зориулсан захидал`;
+      document.getElementById('footerText').textContent = `${userName}, цаашдаа ч гоё яриа, сайхан мөчүүд байх болтугай ✦`;
     }
     enterBtn.addEventListener('click', enterSite);
     nameInput.addEventListener('keydown', e => { if (e.key === 'Enter') enterSite(); });
@@ -1220,7 +1220,7 @@
       ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
       requestAnimationFrame(animateRing);
     })();
-    document.addEventListener('mousedown', () => cursor.style.transform = 'translate(-50%,-50%) scale(1.😎');
+    document.addEventListener('mousedown', () => cursor.style.transform = 'translate(-50%,-50%) scale(0.8)');
     document.addEventListener('mouseup', () => cursor.style.transform = 'translate(-50%,-50%) scale(1)');
 
     // ── PARTICLES ──
@@ -1232,14 +1232,14 @@
       const p = document.createElement('div');
       p.className = 'particle circle';
       const sz = Math.random() * 8 + 3;
-      p.style.cssText = width:${sz}px;height:${sz}px;left:${Math.random() * 100}%;background:${colors[Math.floor(Math.random() * colors.length)]};animation-duration:${Math.random() * 18 + 12}s;animation-delay:${Math.random() * 10}s;;
+      p.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random() * 100}%;background:${colors[Math.floor(Math.random() * colors.length)]};animation-duration:${Math.random() * 18 + 12}s;animation-delay:${Math.random() * 10}s;`;
       pContainer.appendChild(p);
     }
     for (let i = 0; i < 14; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
       p.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-      p.style.cssText = left:${Math.random() * 100}%;font-size:${Math.random() * 12 + 10}px;animation-duration:${Math.random() * 20 + 14}s;animation-delay:${Math.random() * 14}s;;
+      p.style.cssText = `left:${Math.random() * 100}%;font-size:${Math.random() * 12 + 10}px;animation-duration:${Math.random() * 20 + 14}s;animation-delay:${Math.random() * 14}s;`;
       pContainer.appendChild(p);
     }
 
@@ -1330,7 +1330,6 @@
     const SECRET_CODE = '10.1';
 
     secretBtn.addEventListener('click', () => {
-      // Reset to code step each time
       codeStep.style.display = 'block';
       messageStep.style.display = 'none';
       codeInput.value = '';
@@ -1346,10 +1345,8 @@
         codeStep.style.display = 'none';
         messageStep.style.display = 'block';
 
-        // Show photo automatically after a brief delay
         setTimeout(() => {
           photoRevealImg.classList.add('show');
-          // Burst hearts from photo
           for (let i = 0; i < 8; i++) {
             setTimeout(() => {
               const h = document.createElement('div');
@@ -1369,7 +1366,6 @@
           }
         }, 600);
 
-        // Heart shower on reveal
         for (let i = 0; i < 20; i++) {
           setTimeout(() => {
             const h = document.createElement('div');
